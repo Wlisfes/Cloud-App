@@ -15,7 +15,26 @@
 							<text class="u-line-2">{{ node.description }}</text>
 						</div>
 						<div class="node-footer">
-							<div class="node-setion"></div>
+							<div class="node-source">
+								<div class="node-nickname">
+									<text>{{ node.user.nickname }}</text>
+								</div>
+								<div class="node-setion">
+									<u-icon name="eye" color="#999999" size="30"></u-icon>
+									<text>{{ node.browse }}</text>
+								</div>
+								<div class="node-setion">
+									<u-icon name="eye" color="#999999" size="30"></u-icon>
+									<text>{{ node.browse }}</text>
+								</div>
+								<div class="node-setion">
+									<u-icon name="eye" color="#999999" size="30"></u-icon>
+									<text>{{ node.browse }}</text>
+								</div>
+							</div>
+							<div class="node-time">
+								<text>{{ $u.timeFrom(node.createTime, 'yyyy-mm-dd') }}</text>
+							</div>
 						</div>
 					</div>
 					<u-image
@@ -67,7 +86,7 @@ export default {
 			padding: 20rpx;
 			margin-bottom: 20rpx;
 			.node-title {
-				font-size: 16px;
+				font-size: 32rpx;
 				color: #333333;
 				font-weight: 600;
 				margin-bottom: 10rpx;
@@ -84,14 +103,28 @@ export default {
 				margin-right: 20rpx;
 			}
 			.node-content-description {
-				font-size: 14px;
+				font-size: 28rpx;
 				color: #666666;
 				flex: 1;
 			}
-			.node-footer {
-				height: 80rpx;
+		}
+		.node-footer {
+			display: flex;
+			align-items: center;
+			font-size: 22rpx;
+			color: #999999;
+			.node-source {
+				flex: 1;
 				display: flex;
 				align-items: center;
+				overflow: hidden;
+				margin-right: 20rpx;
+			}
+			.node-setion {
+				margin-left: 20rpx;
+				text {
+					margin-left: 8rpx;
+				}
 			}
 		}
 	}
