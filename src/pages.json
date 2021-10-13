@@ -1,0 +1,91 @@
+{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue",
+			"^node-(.*)": "@/components/node/node-$1.vue"
+		}
+	},
+	"pages": [
+		{
+			"path": "pages/common/home",
+			"style": {
+				"navigationBarTitleText": "🍎 首页",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 500,
+				"navigationBarBackgroundColor": "#ffffff",
+				"backgroundColorTop": "#ffffff",
+				"backgroundColorBottom": "#f2f2f2"
+			}
+		},
+		{
+			"path": "pages/common/multiple",
+			"style": {
+				"navigationBarTitleText": "🍀 归档"
+			}
+		},
+		{
+			"path": "pages/common/intense",
+			"style": {
+				"navigationBarTitleText": "🍓 视频"
+			}
+		},
+		{
+			"path": "pages/common/minute",
+			"style": {
+				"navigationBarTitleText": "🍒 收录"
+			}
+		},
+		{
+			"path": "pages/common/partner",
+			"style": {
+				"navigationBarTitleText": "🍄 生活"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "妖雨纯",
+		"navigationBarBackgroundColor": "#ffffff",
+		"backgroundColor": "#ffffff",
+		"enablePullDownRefresh": false
+	},
+	"tabBar": {
+		"color": "#C0C4CC",
+		"selectedColor": "#ff536f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+				"pagePath": "pages/common/home",
+				"iconPath": "static/tabbar/home.png",
+				"selectedIconPath": "static/tabbar/home-current.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/common/multiple",
+				"iconPath": "static/tabbar/home.png",
+				"selectedIconPath": "static/tabbar/home-current.png",
+				"text": "归档"
+			},
+			{
+				"pagePath": "pages/common/intense",
+				"iconPath": "static/tabbar/home.png",
+				"selectedIconPath": "static/tabbar/home-current.png",
+				"text": "视频"
+			},
+			{
+				"pagePath": "pages/common/minute",
+				"iconPath": "static/tabbar/home.png",
+				"selectedIconPath": "static/tabbar/home-current.png",
+				"text": "收录"
+			},
+			{
+				"pagePath": "pages/common/partner",
+				"iconPath": "static/tabbar/home.png",
+				"selectedIconPath": "static/tabbar/home-current.png",
+				"text": "生活"
+			}
+		]
+	}
+}
