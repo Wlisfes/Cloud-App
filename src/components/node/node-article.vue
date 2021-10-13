@@ -1,54 +1,67 @@
 <template>
 	<div class="node-article">
-		<!-- <div class="node-article-header">
-			<div>dasdas</div>?x-oss-process=style/resize-16-9
-		</div> -->
-
-		<div class="node-list">
-			<div class="node-list-item" v-for="node in dataSource" :key="node.id">
-				<div class="node-title">
-					<text class="u-line-2">{{ node.title }}</text>
-				</div>
-				<div class="node-conter">
-					<div class="node-content">
-						<div class="node-content-description">
-							<text class="u-line-2">{{ node.description }}</text>
-						</div>
-						<div class="node-footer">
-							<div class="node-source">
-								<div class="node-nickname">
-									<text>{{ node.user.nickname }}</text>
-								</div>
-								<div class="node-setion">
-									<u-icon name="eye" color="#999999" size="30"></u-icon>
-									<text>{{ node.browse }}</text>
-								</div>
-								<div class="node-setion">
-									<u-icon name="eye" color="#999999" size="30"></u-icon>
-									<text>{{ node.browse }}</text>
-								</div>
-								<div class="node-setion">
-									<u-icon name="eye" color="#999999" size="30"></u-icon>
-									<text>{{ node.browse }}</text>
-								</div>
-							</div>
-							<div class="node-time">
-								<text>{{ $u.timeFrom(node.createTime, 'yyyy-mm-dd') }}</text>
-							</div>
-						</div>
-					</div>
-					<u-image
-						width="160rpx"
-						height="160rpx"
-						:src="`${node.cover}?x-oss-process=style/resize-16-9`"
-						:border-radius="6"
-						mode="aspectFill"
-						lazy-load
-						><u-loading slot="loading"></u-loading>
-					</u-image>
-				</div>
+		<block v-if="loading && dataSource.length === 0">
+			<div class="node-loading">
+				<u-loading color="#fa541c" size="48"></u-loading>
 			</div>
-		</div>
+		</block>
+		<block v-else-if="dataSource.length > 0">
+			<div class="node-list">
+				<div class="node-list-item" v-for="node in dataSource" :key="node.id">
+					<div class="node-title">
+						<text class="u-line-2">{{ node.title }}</text>
+					</div>
+					<div class="node-conter">
+						<div class="node-content">
+							<div class="node-content-description">
+								<text class="u-line-2">{{ node.description }}</text>
+							</div>
+							<div class="node-footer">
+								<div class="node-source">
+									<div class="node-nickname">
+										<text>{{ node.user.nickname }}</text>
+									</div>
+									<div class="node-setion">
+										<u-icon name="eye" color="#999999" size="30"></u-icon>
+										<text>{{ node.browse }}</text>
+									</div>
+									<div class="node-setion">
+										<u-icon name="eye" color="#999999" size="30"></u-icon>
+										<text>{{ node.browse }}</text>
+									</div>
+									<div class="node-setion">
+										<u-icon name="eye" color="#999999" size="30"></u-icon>
+										<text>{{ node.browse }}</text>
+									</div>
+								</div>
+								<div class="node-time">
+									<text>{{ $u.timeFrom(node.createTime, 'yyyy-mm-dd') }}</text>
+								</div>
+							</div>
+						</div>
+						<u-image
+							width="160rpx"
+							height="160rpx"
+							:src="`${node.cover}?x-oss-process=style/resize-16-9`"
+							:border-radius="6"
+							mode="aspectFill"
+							lazy-load
+							><u-loading slot="loading"></u-loading>
+						</u-image>
+					</div>
+				</div>
+				<block v-if="more">
+					<div class="node-loading" style="padding-bottom: 40rpx;">
+						<u-loading color="#fa541c" size="48"></u-loading>
+					</div>
+				</block>
+				<block v-else>
+					<div class="node-loading" style="padding-bottom: 40rpx;">
+						<u-divider bg-color="#f2f2f2">没有更多了</u-divider>
+					</div>
+				</block>
+			</div>
+		</block>
 	</div>
 </template>
 
@@ -63,6 +76,10 @@ export default {
 		loading: {
 			type: Boolean,
 			default: true
+		},
+		more: {
+			type: Boolean,
+			default: true
 		}
 	}
 }
@@ -72,59 +89,55 @@ export default {
 .node-article {
 	display: flex;
 	flex-direction: column;
+}
+.node-list {
+	position: relative;
 	background-color: #f2f2f2;
-	&-header {
+	&-item {
 		display: flex;
-		align-items: center;
+		flex-direction: column;
+		background-color: #ffffff;
+		padding: 20rpx;
+		margin-bottom: 20rpx;
+		.node-title {
+			font-size: 32rpx;
+			color: #333333;
+			font-weight: 600;
+			margin-bottom: 10rpx;
+		}
 	}
-	.node-list {
-		position: relative;
-		&-item {
+	.node-conter {
+		display: flex;
+		overflow: hidden;
+		.node-content {
+			flex: 1;
 			display: flex;
 			flex-direction: column;
-			background-color: #ffffff;
-			padding: 20rpx;
-			margin-bottom: 20rpx;
-			.node-title {
-				font-size: 32rpx;
-				color: #333333;
-				font-weight: 600;
-				margin-bottom: 10rpx;
-			}
-		}
-		.node-conter {
-			display: flex;
 			overflow: hidden;
-			.node-content {
-				flex: 1;
-				display: flex;
-				flex-direction: column;
-				overflow: hidden;
-				margin-right: 20rpx;
-			}
-			.node-content-description {
-				font-size: 28rpx;
-				color: #666666;
-				flex: 1;
-			}
+			margin-right: 20rpx;
 		}
-		.node-footer {
+		.node-content-description {
+			font-size: 28rpx;
+			color: #666666;
+			flex: 1;
+		}
+	}
+	.node-footer {
+		display: flex;
+		align-items: center;
+		font-size: 22rpx;
+		color: #999999;
+		.node-source {
+			flex: 1;
 			display: flex;
 			align-items: center;
-			font-size: 22rpx;
-			color: #999999;
-			.node-source {
-				flex: 1;
-				display: flex;
-				align-items: center;
-				overflow: hidden;
-				margin-right: 20rpx;
-			}
-			.node-setion {
-				margin-left: 20rpx;
-				text {
-					margin-left: 8rpx;
-				}
+			overflow: hidden;
+			margin-right: 20rpx;
+		}
+		.node-setion {
+			margin-left: 20rpx;
+			text {
+				margin-left: 8rpx;
 			}
 		}
 	}

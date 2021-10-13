@@ -21,5 +21,12 @@ page {
 		display: flex;
 		flex-direction: column;
 	}
+
+	.node-loading {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 20rpx;
+	}
 }
 </style>
