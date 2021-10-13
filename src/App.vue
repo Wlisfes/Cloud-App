@@ -15,6 +15,7 @@ export default {
 
 <style lang="scss">
 @import 'uview-ui/index.scss';
+
 page {
 	> .app-conter {
 		flex: 1;

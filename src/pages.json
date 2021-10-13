@@ -41,6 +41,9 @@
 			"style": {
 				"navigationBarTitleText": "🍄 生活"
 			}
+		},
+		{
+			"path": "pages/app/article"
 		}
 	],
 	"globalStyle": {

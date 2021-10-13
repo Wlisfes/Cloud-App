@@ -7,7 +7,7 @@
 		</block>
 		<block v-else-if="dataSource.length > 0">
 			<div class="node-list">
-				<div class="node-list-item" v-for="node in dataSource" :key="node.id">
+				<div class="node-list-item" v-for="node in dataSource" :key="node.id" @click="onRouter(node)">
 					<div class="node-title">
 						<text class="u-line-2">{{ node.title }}</text>
 					</div>
@@ -80,6 +80,11 @@ export default {
 		more: {
 			type: Boolean,
 			default: true
+		}
+	},
+	methods: {
+		onRouter({ id, title }) {
+			uni.navigateTo({ url: `/pages/app/article?id=${id}&title=${title}` })
 		}
 	}
 }
