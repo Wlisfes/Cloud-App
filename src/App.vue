@@ -15,7 +15,7 @@ export default {
 
 <style lang="scss">
 @import 'uview-ui/index.scss';
-
+@import url('mpvue-wxparse/src/wxParse.css');
 page {
 	> .app-conter {
 		flex: 1;
