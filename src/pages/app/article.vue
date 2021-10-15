@@ -6,6 +6,7 @@
 					<node-skeleton-item height="48rpx" width="60%" margin="13rpx 0" />
 					<node-skeleton-item height="48rpx" margin="13rpx 0" />
 				</div>
+				<div class="node-user"></div>
 				<div>
 					<node-skeleton-item height="480rpx" margin="30rpx 0 0" />
 					<node-skeleton-item variant="h1" width="60%" margin="50rpx 0 0" />
@@ -17,6 +18,17 @@
 			</div>
 			<div class="node-article">
 				<div class="node-title u-line-3">{{ node.title }}</div>
+				<div class="node-user">
+					<u-image
+						width="64rpx"
+						height="64rpx"
+						shape="circle"
+						:src="`${node.user.avatar}?x-oss-process=style/resize-16-9`"
+						:border-radius="6"
+						mode="scaleToFill"
+						><u-loading slot="loading"></u-loading>
+					</u-image>
+				</div>
 				<node-wxml v-if="!loading" :content="node.content"></node-wxml>
 			</div>
 		</node-skeleton>
@@ -64,6 +76,14 @@ export default {
 		font-size: 40rpx;
 		color: #333333;
 		font-weight: 500;
+	}
+	.node-user {
+		height: 136rpx;
+		padding: 0 20rpx;
+		border-radius: 10rpx;
+		background: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 37%, #f2f2f2 63%);
+		display: flex;
+		align-items: center;
 	}
 }
 </style>
