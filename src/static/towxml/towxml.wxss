@@ -6,3 +6,6 @@
 
 /**主题配色（深色样式）**/
 @import './style/theme/dark.wxss';
+
+/**主题配色（自定义样式）**/
+@import './style/theme/theme.wxss';

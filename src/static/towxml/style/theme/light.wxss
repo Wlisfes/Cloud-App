@@ -50,14 +50,6 @@
     background-color:#eee;
 }
 
-.h2w-light .h2w__mark {
-    display: inline-block;
-	color: #48b378;
-	padding: 2rpx 8rpx;
-	border-radius: 4rpx;
-	background-color: #ebebeb;
-	font-family: 'Operator Mono', Consolas, Monaco, Menlo, monospace;
-}
 
 .h2w-light .h2w__lineNum {
     color:#ccc;

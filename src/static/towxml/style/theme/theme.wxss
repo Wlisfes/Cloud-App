@@ -1,0 +1,11 @@
+.h2w__mark {
+  display: inline-block;
+  color: #48b378;
+  padding: 2rpx 8rpx;
+  border-radius: 4rpx;
+  background-color: #ebebeb;
+  font-family: 'Operator Mono', Consolas, Monaco, Menlo, monospace;
+}
+.h2w__blockquote .h2w__mark {
+  line-height: 1.2;
+}

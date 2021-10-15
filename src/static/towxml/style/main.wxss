@@ -275,9 +275,6 @@
     border-left-style: solid;
     padding: 0 20rpx;
 }
-.h2w__blockquote .h2w__mark {
-    line-height: 1.2;
-}
 
 /**内连元素**/
 .h2w__a,
