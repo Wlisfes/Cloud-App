@@ -1,9 +1,7 @@
 <template>
 	<div class="app-conter">
 		<node-swiper :loading="swiper.loading" :dataSource="swiper.dataSource"></node-swiper>
-		<block v-if="!swiper.loading">
-			<node-article :loading="node.loading" :more="node.more" :dataSource="node.dataSource"></node-article>
-		</block>
+		<node-article :loading="node.loading" :more="node.more" :dataSource="node.dataSource"></node-article>
 	</div>
 </template>
 

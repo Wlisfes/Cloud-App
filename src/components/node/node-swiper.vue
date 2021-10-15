@@ -1,15 +1,13 @@
 <template>
-	<div class="node-swiper">
-		<block v-if="loading">
-			<div class="node-loading">
-				<u-loading color="#fa541c" size="48"></u-loading>
+	<div style="padding: 0 20rpx;">
+		<node-skeleton animated :loading="loading">
+			<div slot="template" style="border-radius: 8rpx;overflow: hidden;">
+				<node-skeleton-item variant="image" height="250rpx" />
 			</div>
-		</block>
-		<block v-else-if="dataSource.length > 0">
-			<div class="node-swiper-conter">
+			<div class="node-swiper">
 				<u-swiper :list="dataSource" name="cover"></u-swiper>
 			</div>
-		</block>
+		</node-skeleton>
 	</div>
 </template>
 
@@ -28,14 +26,3 @@ export default {
 	}
 }
 </script>
-
-<style lang="scss" scoped>
-.node-swiper {
-	display: flex;
-	flex-direction: column;
-	&-conter {
-		margin: 0 20rpx;
-		position: relative;
-	}
-}
-</style>

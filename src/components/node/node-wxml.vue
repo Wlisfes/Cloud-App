@@ -1,5 +1,7 @@
 <template>
-	<towxml :nodes="html"></towxml>
+	<div class="node-html">
+		<towxml :nodes="html"></towxml>
+	</div>
 </template>
 
 <script>

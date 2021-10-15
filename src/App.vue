@@ -18,7 +18,6 @@ export default {
 
 page {
 	> .app-conter {
-		flex: 1;
 		display: flex;
 		flex-direction: column;
 	}

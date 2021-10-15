@@ -1,11 +1,41 @@
 <template>
-	<div class="node-article">
-		<block v-if="loading && dataSource.length === 0">
-			<div class="node-loading">
-				<u-loading color="#fa541c" size="48"></u-loading>
+	<div class="app-conter">
+		<node-skeleton animated :loading="loading">
+			<div slot="template" class="node-list">
+				<div class="node-list-item" v-for="node in 5" :key="node">
+					<div class="node-title">
+						<node-skeleton-item height="38rpx" margin="0 0 4rpx 0" />
+					</div>
+					<div class="node-conter">
+						<div class="node-content">
+							<div class="node-content-description">
+								<node-skeleton-item margin="10rpx 0 0" />
+								<node-skeleton-item margin="14rpx 0 0" />
+							</div>
+							<div class="node-footer">
+								<div class="node-source">
+									<div class="node-nickname">
+										<node-skeleton-item width="84rpx" />
+									</div>
+									<div class="node-setion">
+										<node-skeleton-item width="64rpx" />
+									</div>
+									<div class="node-setion">
+										<node-skeleton-item width="64rpx" />
+									</div>
+									<div class="node-setion">
+										<node-skeleton-item width="64rpx" />
+									</div>
+								</div>
+								<div class="node-time">
+									<node-skeleton-item width="124rpx" />
+								</div>
+							</div>
+						</div>
+						<node-skeleton-item variant="image" width="160rpx" height="160rpx" />
+					</div>
+				</div>
 			</div>
-		</block>
-		<block v-else-if="dataSource.length > 0">
 			<div class="node-list">
 				<div class="node-list-item" v-for="node in dataSource" :key="node.id" @click="onRouter(node)">
 					<div class="node-title">
@@ -61,7 +91,7 @@
 					</div>
 				</block>
 			</div>
-		</block>
+		</node-skeleton>
 	</div>
 </template>
 
@@ -91,10 +121,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.node-article {
-	display: flex;
-	flex-direction: column;
-}
 .node-list {
 	position: relative;
 	background-color: #f2f2f2;
