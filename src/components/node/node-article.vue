@@ -52,15 +52,15 @@
 										<text>{{ node.user.nickname }}</text>
 									</div>
 									<div class="node-setion">
-										<u-icon name="eye" color="#999999" size="30"></u-icon>
+										<u-icon name="eye" color="#999999" size="28"></u-icon>
 										<text>{{ node.browse }}</text>
 									</div>
 									<div class="node-setion">
-										<u-icon name="eye" color="#999999" size="30"></u-icon>
+										<u-icon name="eye" color="#999999" size="28"></u-icon>
 										<text>{{ node.browse }}</text>
 									</div>
 									<div class="node-setion">
-										<u-icon name="eye" color="#999999" size="30"></u-icon>
+										<u-icon name="eye" color="#999999" size="28"></u-icon>
 										<text>{{ node.browse }}</text>
 									</div>
 								</div>
@@ -72,7 +72,7 @@
 						<u-image
 							width="160rpx"
 							height="160rpx"
-							:src="`${node.cover}?x-oss-process=style/resize-16-9`"
+							:src="`${node.cover}?x-oss-process=style/resize`"
 							:border-radius="6"
 							mode="aspectFill"
 							lazy-load

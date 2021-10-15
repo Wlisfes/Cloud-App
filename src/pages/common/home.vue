@@ -2,7 +2,7 @@
 	<div class="app-conter">
 		<node-swiper :loading="swiper.loading" :dataSource="swiper.dataSource"></node-swiper>
 		<node-article :loading="node.loading" :more="node.more" :dataSource="node.dataSource"></node-article>
-		<u-back-top mode="square" :scroll-top="scrollTop"></u-back-top>
+		<u-back-top mode="square" :scroll-top="scrollTop" :icon-style="{ color: '#ffffff' }"></u-back-top>
 	</div>
 </template>
 
