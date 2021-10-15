@@ -2,14 +2,17 @@
 	<div class="app-conter">
 		<node-swiper :loading="swiper.loading" :dataSource="swiper.dataSource"></node-swiper>
 		<node-article :loading="node.loading" :more="node.more" :dataSource="node.dataSource"></node-article>
+		<u-back-top mode="square" :scroll-top="scrollTop"></u-back-top>
 	</div>
 </template>
 
 <script>
+import { SCROLL_MIXIN } from '@/mixins/common'
 import { HttpStatus, nodeBanner, nodeClientArticles } from '@/api'
 
 export default {
 	name: 'Home',
+	mixins: [SCROLL_MIXIN],
 	data() {
 		return {
 			swiper: {

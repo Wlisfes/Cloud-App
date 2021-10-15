@@ -16,20 +16,21 @@
 				</div>
 			</div>
 			<div class="node-article">
-				<div class="node-title u-line-3">
-					{{ node.title + node.title + node.title }}
-				</div>
+				<div class="node-title u-line-3">{{ node.title }}</div>
 				<node-wxml v-if="!loading" :content="node.content"></node-wxml>
 			</div>
 		</node-skeleton>
+		<u-back-top mode="square" :scroll-top="scrollTop"></u-back-top>
 	</div>
 </template>
 
 <script>
+import { SCROLL_MIXIN } from '@/mixins/common'
 import { HttpStatus, nodeClientArticle } from '@/api'
 
 export default {
 	name: 'Article',
+	mixins: [SCROLL_MIXIN],
 	data() {
 		return {
 			node: null,

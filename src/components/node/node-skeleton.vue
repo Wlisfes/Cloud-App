@@ -67,9 +67,6 @@ export default {
 			immediate: true
 		}
 	},
-	created() {
-		console.log(this.$attrs, this.uiLoading)
-	},
 	data() {
 		return {
 			uiLoading: this.throttle <= 0 ? this.loading : false

@@ -9,3 +9,20 @@
 .h2w__blockquote .h2w__mark {
   line-height: 1.2;
 }
+.h2w__pre {
+  padding-top: 60rpx;
+  position: relative;
+  border-radius: 8rpx;
+}
+.h2w__pre::after {
+  content: " ";
+  position: absolute;
+  border-radius: 50%;
+  background: #ff5f56;
+  width: 24rpx;
+  height: 24rpx;
+  top: 0;
+  left: 24rpx;
+  margin-top: 20rpx;
+  box-shadow: 40rpx 0 #ffbd2e, 80rpx 0 #27c93f;
+}
