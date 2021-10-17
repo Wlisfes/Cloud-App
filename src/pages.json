@@ -21,7 +21,7 @@
 		{
 			"path": "pages/common/multiple",
 			"style": {
-				"navigationBarTitleText": "🍀 归档"
+				"navigationBarTitleText": "🍀 分类"
 			}
 		},
 		{
@@ -69,7 +69,7 @@
 				"pagePath": "pages/common/multiple",
 				"iconPath": "static/tabbar/home.png",
 				"selectedIconPath": "static/tabbar/home-current.png",
-				"text": "归档"
+				"text": "分类"
 			},
 			{
 				"pagePath": "pages/common/intense",
