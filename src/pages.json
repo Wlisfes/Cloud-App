@@ -39,7 +39,7 @@
 		{
 			"path": "pages/common/partner",
 			"style": {
-				"navigationBarTitleText": "🍄 生活"
+				"navigationBarTitleText": "🍄 控制台"
 			}
 		},
 		{
@@ -87,7 +87,7 @@
 				"pagePath": "pages/common/partner",
 				"iconPath": "static/tabbar/home.png",
 				"selectedIconPath": "static/tabbar/home-current.png",
-				"text": "生活"
+				"text": "控制台"
 			}
 		]
 	}
