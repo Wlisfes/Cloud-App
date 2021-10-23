@@ -1,6 +1,6 @@
 <template>
 	<div :class="['el-skeleton__item', `el-skeleton__${variant}`]" :style="[useStyle]">
-		<node-skeleton-placeholder v-if="variant === 'image'" />
+		<u-icon name="photo" :size="size" :color="color" v-if="variant === 'image'"></u-icon>
 	</div>
 </template>
 
@@ -19,6 +19,14 @@ export default {
 		height: {
 			type: [String, Number],
 			default: 0
+		},
+		size: {
+			type: Number,
+			default: 40
+		},
+		color: {
+			type: String,
+			default: '#909399'
 		},
 		margin: {
 			type: [String, Number],

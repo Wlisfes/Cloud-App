@@ -32,7 +32,7 @@ export function nodeSource(params) {
 	return request({
 		url: `/api/source/info`,
 		method: 'GET',
-		params
+		data: params
 	})
 }
 
@@ -41,7 +41,7 @@ export function nodeSources(params) {
 	return request({
 		url: `/api/source/list-node`,
 		method: 'GET',
-		params
+		data: params
 	})
 }
 
@@ -50,6 +50,6 @@ export function nodeDeleteSource(params) {
 	return request({
 		url: `/api/source/del`,
 		method: 'DELETE',
-		params
+		data: params
 	})
 }
