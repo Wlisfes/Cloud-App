@@ -21,7 +21,12 @@
 		{
 			"path": "pages/common/multiple",
 			"style": {
-				"navigationBarTitleText": "🍀 分类"
+				"navigationBarTitleText": "🍀 分类",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 500,
+				"navigationBarBackgroundColor": "#ffffff",
+				"backgroundColorTop": "#ffffff",
+				"backgroundColorBottom": "#ffffff"
 			}
 		},
 		{

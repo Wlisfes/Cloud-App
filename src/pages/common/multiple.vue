@@ -19,8 +19,23 @@ export default {
 			}
 		}
 	},
-	created() {
+	onLoad() {
 		this.initNodeSources()
+	},
+	/**下拉刷新**/
+	async onPullDownRefresh() {
+		this.node.page = 1
+		await this.initNodeSources()
+		uni.stopPullDownRefresh()
+	},
+	/**上拉加载**/
+	async onReachBottom() {
+		const { more, loading } = this.node
+		if (more && !loading) {
+			this.node.loading = true
+			this.node.page++
+			await this.initNodeSources(true)
+		}
 	},
 	methods: {
 		/**标签列表**/

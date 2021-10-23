@@ -1,6 +1,6 @@
 <template>
 	<div class="node-source">
-		<node-skeleton animated :loading="loading">
+		<node-skeleton animated :loading="loading && dataSource.length === 0">
 			<div slot="template" class="node-list">
 				<div class="node-list-item" v-for="key in 9" :key="key">
 					<div class="node-conter">
@@ -29,6 +29,16 @@
 						</div>
 					</div>
 				</div>
+				<block v-if="more">
+					<div class="node-loading" style="width: 100%;padding-bottom: 40rpx;">
+						<u-loading color="#fa541c" size="48"></u-loading>
+					</div>
+				</block>
+				<block v-else>
+					<div class="node-loading" style="width: 100%;padding-bottom: 40rpx;">
+						<u-divider bg-color="#ffffff">没有更多了</u-divider>
+					</div>
+				</block>
 			</div>
 		</node-skeleton>
 	</div>
