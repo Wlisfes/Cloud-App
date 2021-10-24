@@ -113,8 +113,8 @@ export default {
 		}
 	},
 	methods: {
-		onRouter({ id, title }) {
-			uni.navigateTo({ url: `/pages/app/article?id=${id}&title=${title}` })
+		onRouter(node) {
+			this.$emit('router', node)
 		}
 	}
 }

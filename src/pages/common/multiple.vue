@@ -1,6 +1,11 @@
 <template>
 	<div class="app-conter">
-		<node-source :loading="node.loading" :more="node.more" :dataSource="node.dataSource"></node-source>
+		<node-source
+			:loading="node.loading"
+			:more="node.more"
+			:dataSource="node.dataSource"
+			@source="onSource"
+		></node-source>
 	</div>
 </template>
 
@@ -57,6 +62,10 @@ export default {
 				console.log(e)
 				return e
 			}
+		},
+		/**分类详情列表**/
+		onSource({ id, name }) {
+			uni.navigateTo({ url: `/pages/root/article?id=${id}&title=${name}` })
 		}
 	}
 }

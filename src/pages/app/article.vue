@@ -69,7 +69,7 @@ import { SCROLL_MIXIN } from '@/mixins/common'
 import { HttpStatus, nodeClientArticle } from '@/api'
 
 export default {
-	name: 'Article',
+	name: 'AppArticle',
 	mixins: [SCROLL_MIXIN],
 	data() {
 		return {

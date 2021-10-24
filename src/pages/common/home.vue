@@ -1,7 +1,12 @@
 <template>
 	<div class="app-conter">
 		<node-swiper :loading="swiper.loading" :dataSource="swiper.dataSource"></node-swiper>
-		<node-article :loading="node.loading" :more="node.more" :dataSource="node.dataSource"></node-article>
+		<node-article
+			:loading="node.loading"
+			:more="node.more"
+			:dataSource="node.dataSource"
+			@router="onRouter"
+		></node-article>
 		<u-back-top mode="square" :scroll-top="scrollTop" :icon-style="{ color: '#ffffff' }"></u-back-top>
 	</div>
 </template>
@@ -83,6 +88,10 @@ export default {
 			} catch (e) {
 				return e
 			}
+		},
+		/**文章详情router**/
+		onRouter({ id, title }) {
+			uni.navigateTo({ url: `/pages/app/article?id=${id}&title=${title}` })
 		},
 		onSearch() {}
 	}

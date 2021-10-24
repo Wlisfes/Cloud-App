@@ -49,6 +49,9 @@
 		},
 		{
 			"path": "pages/app/article"
+		},
+		{
+			"path": "pages/root/article"
 		}
 	],
 	"globalStyle": {
