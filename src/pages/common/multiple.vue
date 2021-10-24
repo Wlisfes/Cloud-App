@@ -12,7 +12,7 @@ export default {
 		return {
 			node: {
 				page: 1,
-				size: 18,
+				size: 40,
 				dataSource: [],
 				more: true,
 				loading: true

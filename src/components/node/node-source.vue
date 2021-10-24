@@ -2,7 +2,7 @@
 	<div class="node-source">
 		<node-skeleton animated :loading="loading && dataSource.length === 0">
 			<div slot="template" class="node-list">
-				<div class="node-list-item" v-for="key in 9" :key="key">
+				<div class="node-list-item" v-for="key in 12" :key="key">
 					<div class="node-conter">
 						<div class="node-cover">
 							<div class="node-cover-conter">
@@ -72,7 +72,7 @@ export default {
 		flex-wrap: wrap;
 		padding: 10rpx;
 		&-item {
-			width: 33.3333%;
+			width: 25%;
 			.node-conter {
 				display: flex;
 				flex-direction: column;
