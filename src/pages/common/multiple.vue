@@ -6,13 +6,17 @@
 			:dataSource="node.dataSource"
 			@source="onSource"
 		></node-source>
+		<u-back-top mode="square" :scroll-top="scrollTop" :icon-style="{ color: '#ffffff' }"></u-back-top>
 	</div>
 </template>
 
 <script>
+import { SCROLL_MIXIN } from '@/mixins/common'
 import { HttpStatus, nodeSources } from '@/api'
+
 export default {
 	name: 'Multiple',
+	mixins: [SCROLL_MIXIN],
 	data() {
 		return {
 			node: {
